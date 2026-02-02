@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminex Studios | Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #3a86ff;
+            --dark-blue: #0a1128;
+            --deep-black: #02040a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --discord-blurple: #5865F2;
+            --insta-pink: #E1306C;
+            
+            /* Role Colors */
+            --c-director: #4cc9f0;
+            --c-dev: #4361ee;
+            --c-artist: #a7ff83;
+            --c-modeler: #fb8500;
+            --c-producer: #ff006e;
+            --c-music: #8338ec;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top, var(--dark-blue) 0%, var(--deep-black) 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        section {
+            display: none;
+            animation: slideUp 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            width: 100%;
+        }
+
+        section:target { display: block; }
+        #home:not(:target) { display: block; }
+        section:target ~ #home { display: none; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(2, 4, 10, 0.95);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            letter-spacing: 2px;
+            padding: 10px 18px;
+            border-radius: 12px;
+        }
+
+        nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+
+        .discord-nav {
+            background: var(--discord-blurple) !important;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(88, 101, 242, 0.4);
+        }
+
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 80px 20px; 
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-logo {
+            width: 320px;
+            filter: drop-shadow(0 15px 40px rgba(58, 134, 255, 0.5));
+            margin-bottom: 40px;
+        }
+
+        h1 { font-size: 4.5rem; font-weight: 900; margin: 0; letter-spacing: -2px; line-height: 1; }
+
+        .slogan {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.4rem;
+            font-weight: 700;
+            max-width: 800px;
+            margin: 30px auto;
+            font-style: italic;
+        }
+
+        .founders-flex {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 60px 0;
+        }
+
+        .founder-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: var(--card-bg);
+            padding: 30px 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            min-width: 240px;
+            box-shadow: 0 0 0 rgba(58, 134, 255, 0);
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--main-blue);
+            box-shadow: 0 10px 30px rgba(58, 134, 255, 0.2);
+        }
+
+        .founder-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 25px;
+            border: 3px solid var(--main-blue);
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .staff-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .staff-category {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 280px;
+        }
+
+        .staff-category h3 {
+            color: var(--main-blue);
+            font-size: 0.85rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .staff-list { list-style: none; padding: 0; margin: 0; }
+        .staff-list li { padding: 8px 0; font-size: 1.4rem; font-weight: 700; }
+
+        .leak-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 40px;
+            padding: 50px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leak-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .leak-gallery img {
+            max-width: 420px;
+            width: 100%;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s;
+        }
+
+        .leak-gallery img:hover { transform: scale(1.02); border-color: var(--main-blue); }
+
+        /* Careers Specific */
+        .role-span { font-weight: 900; font-size: 1.6rem; text-transform: uppercase; }
+        .c-director { color: var(--c-director); }
+        .c-dev { color: var(--c-dev); }
+        .c-artist { color: var(--c-artist); }
+        .c-modeler { color: var(--c-modeler); }
+        .c-producer { color: var(--c-producer); }
+        .c-music { color: var(--c-music); }
+
+        .email-link {
+            color: var(--main-blue);
+            text-decoration: none;
+            font-weight: 900;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .email-link:hover { border-bottom-color: var(--main-blue); }
+
+        .btn-insta { 
+            border: 2px solid var(--insta-pink); 
+            background: rgba(225, 48, 108, 0.1);
+            padding: 22px 60px;
+            border-radius: 24px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 900;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.3rem;
+            transition: 0.4s;
+        }
+        .btn-insta:hover { background: var(--insta-pink); transform: translateY(-5px); box-shadow: 0 0 40px rgba(225, 48, 108, 0.4); }
+
+        footer { padding: 80px 20px; opacity: 0.4; font-weight: 900; font-size: 0.9rem; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#leaks">LEAKS</a>
+        <a href="#careers">CAREERS</a>
+        <a href="#socials">SOCIALS</a>
+        <a href="https://discord.gg/WJz6mtSqDC" target="_blank" class="discord-nav">
+            <img src="https://cdn.discordapp.com/attachments/1450275264394170469/1467639777993163015/discord-icon-43736.png?ex=69811d8e&is=697fcc0e&hm=ee42ac7a24b8345df79b30806d42bc6620bf3ccbfa5cf1f594d8c9cf46117594&" width="24" alt="Discord">
+            JOIN DISCORD
+        </a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home">
+            <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631918911848540/LuminexLogo.png?ex=6981163c&is=697fc4bc&hm=c4566ab8e49b3aa62696df8b44e20fee6120db8dbe8aee2fe1ed1c21d293e041&" alt="Luminex Logo" class="main-logo">
+            <h1>LUMINEX<br>STUDIOS</h1>
+            <p class="slogan">Where Creativity Meets innovation through light, vision, and design.</p>
+            
+            <div class="founders-flex">
+                <div class="founder-card">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631919393931365/SlipzPFP.png?ex=6981163c&is=697fc4bc&hm=68ea6704d92d99a61cbe7f27701c5b3c7c8b0bc7e5b3213523f0e57995b07f7f&" class="founder-img">
+                    <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
+                    <div style="font-weight: 900; font-size: 1.8rem;">Slipz</div>
+                </div>
+                <div class="founder-card">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631918324514997/VisionPFP.png?ex=6981163c&is=697fc4bc&hm=870e0ddee127eb5446c955c7d342447c13943b5308ab698255f5beccbfbe9e25&" class="founder-img">
+                    <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
+                    <div style="font-weight: 900; font-size: 1.8rem;">Visionn</div>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 80px;">THE STAFF</h2>
+            <div class="staff-grid">
+                <div class="staff-category">
+                    <h3>GAME DIRECTORS</h3>
+                    <ul class="staff-list"><li>Tracker</li><li>Skittles</li></ul>
+                </div>
+                <div class="staff-category">
+                    <h3>MANAGEMENT</h3>
+                    <ul class="staff-list"><li>ThyDynasty</li></ul>
+                </div>
+                <div class="staff-category">
+                    <h3>DEVELOPMENT</h3>
+                    <ul class="staff-list">
+                        <li>Chase</li>
+                        <li>Zach</li>
+                        <li>Fellzyxx</li>
+                        <li>Erik</li>
+                        <li>Izzy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="leaks">
+            <h2 class="section-title">PROJECT VAULT</h2>
+            
+            <div class="leak-card">
+                <h3 style="color: var(--main-blue); font-weight: 900; letter-spacing: 5px;">MONKER</h3>
+                <p style="font-weight: 900; color: #fff; font-size: 1.5rem;">A gorilla tag styled fangame</p>
+                <div class="leak-gallery">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631903833325810/sneakpeak4.png?ex=69811639&is=697fc4b9&hm=e25842a97c46f5e9533616d9a7e93a015fbc4ac954b2317a17c108488e5ba2a8&" alt="Monker 1">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631903195533332/sneakpeak5.png?ex=69811639&is=697fc4b9&hm=7de1916e59875ca55c9ca3d631115b51ee5bb06d58e0643ab08dc9f35203d3ea&" alt="Monker 2">
+                </div>
+            </div>
+
+            <div class="leak-card">
+                <h3 style="color: var(--main-blue); font-weight: 900; letter-spacing: 5px;">SCARY BABOON REDUX</h3>
+                <div class="leak-gallery">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631905854849074/ScaryBaboonRedux.png?ex=69811639&is=697fc4b9&hm=e1e7e375573e1a8686c521f4aca8e7bd95f97855f66fdb15fd8346affc9deb33&" alt="Redux 1">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631904814792857/sneakpeak2.png?ex=69811639&is=697fc4b9&hm=3f70bfaaf1ef50af2d304c4b10c8f18e889e914a19d28eeea7840d8cc5507d44&" alt="Redux 2">
+                    <img src="https://cdn.discordapp.com/attachments/1382825469237526630/1467631904386715698/sneakpeak3.png?ex=69811639&is=697fc4b9&hm=85e2a88b33029b301bfab501d41ed161576f1ae1446f9c14ace32bcd237a949a&" alt="Redux 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="careers">
+            <h2 class="section-title">CAREERS</h2>
+            <div class="leak-card">
+                <p style="font-size: 1.5rem; font-weight: 700;">At Luminex Studio we have</p>
+                <div style="margin: 30px 0; line-height: 2.5;">
+                    <span class="role-span c-director">Game Directors</span> | 
+                    <span class="role-span c-dev">Game Developers</span> | 
+                    <span class="role-span c-artist">Artist</span> | 
+                    <span class="role-span c-modeler">Modelers</span> | 
+                    <span class="role-span c-producer">Producers</span> | 
+                    <span class="role-span c-music">Music Production</span>
+                </div>
+                <p style="font-size: 1.3rem; font-weight: 700; margin-top: 40px;">
+                    Want to earn a spot here? Then contact us <br>
+                    <a href="mailto:LuminexStudio1@gmail.com" class="email-link">LuminexStudio1@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="socials">
+            <h2 class="section-title">CONNECT</h2>
+            <div style="padding: 40px 0;">
+                <a href="https://www.instagram.com/luminexstudio2026?igsh=NjBsbTdweGhsc3Fj" target="_blank" class="btn-insta">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="40" alt="Instagram">
+                    LUMINEX INSTAGRAM
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 LUMINEX STUDIOS
+    </footer>
+
+</body>
+</html>
