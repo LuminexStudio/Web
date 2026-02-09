@@ -270,45 +270,92 @@
     <div class="container">
         
         <section id="home">
-            <img src="images/luminex.png" alt="Luminex Logo" class="main-logo">
-            <h1>LUMINEX<br>STUDIOS</h1>
-            <p class="slogan">Where Creativity Meets innovation through light, vision, and design.</p>
-            
-            <div class="founders-flex">
-                <div class="founder-card">
-                   <img src="images/slipz.png" class="founder-img">
-                    <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
-                    <div style="font-weight: 900; font-size: 1.8rem;">Slipz</div>
-                </div>
-                <div class="founder-card">
-                    <img src="images/vision.png" class="founder-img">
-                    <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
-                    <div style="font-weight: 900; font-size: 1.8rem;">Visionn</div>
-                </div>
-            </div>
+    <style>
+        .founder-card {
+            position: relative;
+            overflow: hidden;
+        }
 
-            <h2 class="section-title" style="margin-top: 80px;">THE STAFF</h2>
-            <div class="staff-grid">
-                <div class="staff-category">
-                    <h3>GAME DIRECTORS</h3>
-                    <ul class="staff-list"><li>Tracker</li><li>Skittles</li></ul>
-                </div>
-                <div class="staff-category">
-                    <h3>MANAGEMENT</h3>
-                    <ul class="staff-list"><li>ThyDynasty</li></ul>
-                </div>
-                <div class="staff-category">
-                    <h3>DEVELOPMENT</h3>
-                    <ul class="staff-list">
-                        <li>Chase</li>
-                        <li>Zach</li>
-                        <li>Fellzyxx</li>
-                        <li>Erik</li>
-                        <li>Izzy</li>
-                    </ul>
-                </div>
+        .founder-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 17, 40, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .founder-card:hover .founder-description {
+            opacity: 1;
+        }
+
+        .founder-card:hover .founder-img, 
+        .founder-card:hover div, 
+        .founder-card:hover small {
+            opacity: 0.1; /* Fades the background elements when text appears */
+        }
+    </style>
+
+    <img src="images/luminex.png" alt="Luminex Logo" class="main-logo">
+    <h1>LUMINEX<br>STUDIOS</h1>
+    <p class="slogan">Where Creativity Meets innovation through light, vision, and design.</p>
+    
+    <div class="founders-flex">
+        <div class="founder-card">
+            <div class="founder-description">
+                Yo, im slipz! the founder and lead developer for LUMINEX. my goals here are to make monker and scary baboon the biggest it can be (without the help of visions marketing!) and make sure everyone is happy being inside the Luminex Studios community!
             </div>
-        </section>
+            <img src="images/slipz.png" class="founder-img">
+            <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
+            <div style="font-weight: 900; font-size: 1.8rem;">Slipz</div>
+        </div>
+
+        <div class="founder-card">
+            <div class="founder-description">
+                Hey! Im Vision. One of the Founder of Luminex Studio, my goal as founder here is to bring our Games to the top and make them rocket inside the industry.
+            </div>
+            <img src="images/vision.png" class="founder-img">
+            <small style="color: var(--main-blue); font-weight: 900; font-size: 0.8rem; letter-spacing: 3px;">OWNER</small>
+            <div style="font-weight: 900; font-size: 1.8rem;">Visionn</div>
+        </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 80px;">THE STAFF</h2>
+    <div class="staff-grid">
+        <div class="staff-category">
+            <h3>GAME DIRECTORS</h3>
+            <ul class="staff-list"><li>Tracker</li><li>Skittles</li></ul>
+        </div>
+        <div class="staff-category">
+            <h3>MANAGEMENT</h3>
+            <ul class="staff-list"><li>ThyDynasty</li></ul>
+        </div>
+        <div class="staff-category">
+            <h3>DEVELOPMENT</h3>
+            <ul class="staff-list">
+                <li>Chase</li>
+                <li>Zach</li>
+                <li>Fellzyxx</li>
+                <li>Erik</li>
+                <li>Izzy</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
         <section id="leaks">
             <h2 class="section-title">PROJECT VAULT</h2>
