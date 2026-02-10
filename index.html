@@ -390,18 +390,14 @@
             <span class="role-span c-music">Music Production</span>
         </div>
         
-        <hr style="width: 100%; border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
-
-        <h3 style="color: var(--main-blue); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">Application Form</h3>
-        
-        <form id="appForm" action="https://formspree.io/f/mlgwdyyb" method="POST" style="width: 100%; max-width: 600px; text-align: left;">
+        <form id="appForm" style="width: 100%; max-width: 600px; text-align: left;">
             
-            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">What is your Discord UserID?</label>
-            <input type="text" name="Discord ID" id="discordIdField" required class="app-input" placeholder="Must be exactly 19 characters..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;">
-            <small id="idStatus" style="color: #ff4d4d; font-size: 0.75rem; font-weight: 700;">Characters: 0/19</small>
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block;">Discord UserID (19 Digits)</label>
+            <input type="text" name="Discord_ID" id="discordIdField" required class="app-input" placeholder="e.g. 1234567890123456789" maxlength="19" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;">
+            <small id="idStatus" style="color: #ff4d4d; font-size: 0.75rem; font-weight: 700; display: block; margin-top: 5px;">Characters: 0/19</small>
 
-            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">What Do You Want To Apply For?</label>
-            <select id="applyRole" name="Applying For" class="app-input" onchange="updateRoleText()" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #0a1128; color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;">
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 20px;">Role Applying For</label>
+            <select name="Role" id="applyRole" required class="app-input" onchange="updateRoleText()" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #0a1128; color: white; margin-top: 8px;">
                 <option value="">Select a role...</option>
                 <option value="Game Director">Game Director</option>
                 <option value="Game Developer">Game Developer</option>
@@ -411,82 +407,103 @@
                 <option value="Music Production">Music Production</option>
             </select>
 
-            <label id="whyLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Why Do You Want To Become A Member?</label>
-            <textarea id="q1" name="Why Join" class="app-input" required placeholder="Enter at least 30 words..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;"></textarea>
-            <span id="q1Status" style="font-weight: 700; font-size: 0.8rem; margin-top: 5px; display: block; color: #ff4d4d;">Words: 0/30</span>
+            <label id="whyLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 20px;">Why join Luminex?</label>
+            <textarea id="q1" name="Reason_to_Join" class="app-input" required placeholder="30 words minimum..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;"></textarea>
+            <span id="q1Status" style="font-weight: 700; font-size: 0.8rem; color: #ff4d4d;">Words: 0/30</span>
 
-            <label id="pickLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Why Should We Pick You?</label>
-            <textarea id="q2" name="Why Pick Me" class="app-input" required placeholder="Enter at least 30 words..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;"></textarea>
-            <span id="q2Status" style="font-weight: 700; font-size: 0.8rem; margin-top: 5px; display: block; color: #ff4d4d;">Words: 0/30</span>
+            <label id="pickLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 20px;">Why should we pick you?</label>
+            <textarea id="q2" name="Why_Pick_Me" class="app-input" required placeholder="30 words minimum..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;"></textarea>
+            <span id="q2Status" style="font-weight: 700; font-size: 0.8rem; color: #ff4d4d;">Words: 0/30</span>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div>
-                    <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">How Old Are You?</label>
-                    <input type="number" name="Age" required class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;">
+                    <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Age</label>
+                    <input type="number" name="Age" id="ageField" required class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;">
                 </div>
                 <div>
                     <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Activity (1-10)</label>
-                    <input type="number" name="Activity" min="1" max="10" required class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;">
+                    <input type="number" name="Activity" id="activityField" min="1" max="10" required class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px;">
                 </div>
             </div>
 
-            <button type="submit" id="submitBtn" style="margin-top: 30px; width: 100%; background: var(--main-blue); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; transition: 0.3s;">SUBMIT APPLICATION</button>
+            <button type="submit" id="submitBtn" style="margin-top: 30px; width: 100%; background: var(--main-blue); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; transition: 0.3s;">SEND APPLICATION</button>
         </form>
     </div>
 
     <script>
+        const FORM_ID_1 = "mlgwdyyb"; 
+        const FORM_ID_2 = "xjgeknnl"; 
+
         function updateRoleText() {
             const role = document.getElementById('applyRole').value || "Member";
             document.getElementById('whyLabel').innerText = "Why Do You Want To Become A " + role + " (30 words minimum)?";
             document.getElementById('pickLabel').innerText = "Why Should We Pick You As a " + role + " (30 words minimum)?";
         }
 
-        function isSpam(text) {
-            const repeatedChar = /(.)\1{5,}/.test(text); 
-            const words = text.split(/\s+/);
-            let repeatedWords = false;
-            for(let i=0; i<words.length-2; i++) {
-                if(words[i].toLowerCase() === words[i+1].toLowerCase() && words[i].toLowerCase() === words[i+2].toLowerCase()) repeatedWords = true;
-            }
-            return repeatedChar || repeatedWords;
+        document.getElementById('discordIdField').oninput = function() {
+            const len = this.value.trim().length;
+            const status = document.getElementById('idStatus');
+            status.innerText = "Characters: " + len + "/19";
+            status.style.color = (len === 19) ? "#a7ff83" : "#ff4d4d";
         }
 
         function checkWords(id, statusId) {
             const text = document.getElementById(id).value.trim();
-            const count = text ? text.split(/\s+/).filter(word => word.length > 0).length : 0;
+            const count = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
             const status = document.getElementById(statusId);
             status.innerText = "Words: " + count + "/30";
-            const isValid = count >= 30 && !isSpam(text);
-            status.style.color = isValid ? "#a7ff83" : "#ff4d4d";
-            return isValid;
-        }
-
-        // Live ID Length Check
-        document.getElementById('discordIdField').oninput = function() {
-            const val = this.value.trim();
-            const status = document.getElementById('idStatus');
-            status.innerText = "Characters: " + val.length + "/19";
-            status.style.color = (val.length === 19) ? "#a7ff83" : "#ff4d4d";
+            status.style.color = (count >= 30) ? "#a7ff83" : "#ff4d4d";
+            return count >= 30;
         }
 
         document.getElementById('q1').oninput = () => checkWords('q1', 'q1Status');
         document.getElementById('q2').oninput = () => checkWords('q2', 'q2Status');
 
-        document.getElementById('appForm').onsubmit = function(e) {
+        document.getElementById('appForm').onsubmit = async function(e) {
+            e.preventDefault();
+
             const userId = document.getElementById('discordIdField').value.trim();
-            const q1Ok = checkWords('q1', 'q1Status');
-            const q2Ok = checkWords('q2', 'q2Status');
+            const q1Valid = checkWords('q1', 'q1Status');
+            const q2Valid = checkWords('q2', 'q2Status');
 
             if (userId.length !== 19) {
-                e.preventDefault();
-                alert("Application Denied: Discord UserID must be exactly 19 characters long.");
-                return false;
+                alert("ID Error: Discord UserID must be exactly 19 characters.");
+                return;
             }
 
-            if (!q1Ok || !q2Ok) {
-                e.preventDefault();
-                alert("Application Denied: Ensure you have 30 words in both fields and no spam letters/repeated words.");
-                return false;
+            if (!q1Valid || !q2Valid) {
+                alert("Word Count Error: Both answers must be at least 30 words.");
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "SENDING...";
+            submitBtn.disabled = true;
+
+            // Collect Data
+            const formData = new FormData();
+            formData.append("Discord_ID", userId);
+            formData.append("Role", document.getElementById('applyRole').value);
+            formData.append("Reason_to_Join", document.getElementById('q1').value);
+            formData.append("Why_Pick_Me", document.getElementById('q2').value);
+            formData.append("Age", document.getElementById('ageField').value);
+            formData.append("Activity", document.getElementById('activityField').value);
+
+            try {
+                
+                await Promise.all([
+                    fetch(`https://formspree.io/f/mlgwdyyb`, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }),
+                    fetch(`https://formspree.io/f/xjgeknnl`, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+                ]);
+
+                localStorage.setItem('luminex_applied', 'true');
+                alert("Success! Your application has been sent to both staff channels.");
+                location.reload();
+
+            } catch (error) {
+                alert("An error occurred. Please try again.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SEND APPLICATION";
             }
         };
     </script>
