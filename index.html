@@ -377,24 +377,135 @@
             </div>
         </section>
 
-        <section id="careers">
-            <h2 class="section-title">CAREERS</h2>
-            <div class="leak-card">
-                <p style="font-size: 1.5rem; font-weight: 700;">At Luminex Studio we have</p>
-                <div style="margin: 30px 0; line-height: 2.5;">
-                    <span class="role-span c-director">Game Directors</span> | 
-                    <span class="role-span c-dev">Game Developers</span> | 
-                    <span class="role-span c-artist">Artist</span> | 
-                    <span class="role-span c-modeler">Modelers</span> | 
-                    <span class="role-span c-producer">Producers</span> | 
-                    <span class="role-span c-music">Music Production</span>
-                </div>
-                <p style="font-size: 1.3rem; font-weight: 700; margin-top: 40px;">
-                    Want to earn a spot here? Then contact us <br>
-                    <a href="mailto:LuminexStudio1@gmail.com" class="email-link">LuminexStudio1@gmail.com</a>
-                </p>
-            </div>
-        </section>
+<section id="careers">
+    <h2 class="section-title">CAREERS</h2>
+    <div class="leak-card">
+        <p style="font-size: 1.5rem; font-weight: 700;">At Luminex Studio we have</p>
+        <div style="margin: 30px 0; line-height: 2.5;">
+            <span class="role-span c-director">Game Directors</span> | 
+            <span class="role-span c-dev">Game Developers</span> | 
+            <span class="role-span c-artist">Artist</span> | 
+            <span class="role-span c-modeler">Modelers</span> | 
+            <span class="role-span c-producer">Producers</span> | 
+            <span class="role-span c-music">Music Production</span>
+        </div>
+        
+        <hr style="width: 100%; border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+        <h3 style="color: var(--main-blue); font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">Application Form</h3>
+        
+        <form id="appForm" action="https://formspree.io/f/mlgwdyyb" method="POST" style="width: 100%; max-width: 600px; text-align: left;">
+            
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">What is your Discord UserID?</label>
+            <input type="text" name="Discord ID" required class="app-input" placeholder="Enter Discord ID..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;">
+
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">What Do You Want To Apply For?</label>
+            <select id="applyRole" name="Applying For" class="app-input" onchange="updateRoleText()" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #0a1128; color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;">
+                <option value="">Select a role...</option>
+                <option value="Game Director">Game Director</option>
+                <option value="Game Developer">Game Developer</option>
+                <option value="Artist">Artist</option>
+                <option value="Modeler">Modeler</option>
+                <option value="Producer">Producer</option>
+                <option value="Music Production">Music Production</option>
+            </select>
+
+            <label id="whyLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Why Do You Want To Become A Member?</label>
+            <textarea id="q1" name="Why Join" class="app-input" required placeholder="Enter at least 30 words..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;"></textarea>
+            <span id="q1Status" style="font-weight: 700; font-size: 0.8rem; margin-top: 5px; display: block; color: #ff4d4d;">Words: 0/30</span>
+
+            <label id="pickLabel" class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">Why Should We Pick You?</label>
+            <textarea id="q2" name="Why Pick Me" class="app-input" required placeholder="Enter at least 30 words..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;"></textarea>
+            <span id="q2Status" style="font-weight: 700; font-size: 0.8rem; margin-top: 5px; display: block; color: #ff4d4d;">Words: 0/30</span>
+
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">How Old Are You?</label>
+            <input type="number" name="Age" required class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;">
+
+            <label class="app-label" style="font-weight: 900; color: var(--main-blue); display: block; margin-top: 15px;">How Active Are You (1-10)?</label>
+            <select name="Activity Level" class="app-input" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); background: #0a1128; color: white; margin-top: 8px; font-family: 'Montserrat', sans-serif;" required>
+                <option value="">Select Level...</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+            <button id="submitBtn" type="submit" style="margin-top: 30px; width: 100%; background: var(--main-blue); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 900; cursor: pointer; transition: 0.3s;">SUBMIT APPLICATION</button>
+        </form>
+
+        <p style="font-size: 1.1rem; font-weight: 700; margin-top: 40px; opacity: 0.6;">
+            Alternatively, contact us at <br>
+            <a href="mailto:LuminexStudio1@gmail.com" class="email-link">LuminexStudio1@gmail.com</a>
+        </p>
+    </div>
+
+    <script>
+        // Check if user has already applied on this device
+        window.onload = function() {
+            if (localStorage.getItem('luminex_applied')) {
+                const form = document.getElementById('appForm');
+                form.innerHTML = "<h3 style='color: #a7ff83;'>You have already submitted an application!</h3><p>We will get back to you soon.</p>";
+            }
+        };
+
+        function updateRoleText() {
+            const role = document.getElementById('applyRole').value || "Member";
+            document.getElementById('whyLabel').innerText = "Why Do You Want To Become A " + role + " (30 words minimum)?";
+            document.getElementById('pickLabel').innerText = "Why Should We Pick You As a " + role + " (30 words minimum)?";
+        }
+
+        function isSpam(text) {
+            // Check for repeated letters (e.g., "aaaaa")
+            const repeatedChar = /(.)\1{4,}/.test(text); 
+            // Check for gibberish (very long words without vowels)
+            const longGibberish = /\b[^aeiou\s]{10,}\b/i.test(text);
+            return repeatedChar || longGibberish;
+        }
+
+        function checkWords(id, statusId) {
+            const text = document.getElementById(id).value.trim();
+            const words = text.split(/\s+/).filter(word => word.length > 0);
+            const count = words.length;
+            
+            // Check for repeated words (e.g., "the the the the")
+            let hasSpamWords = false;
+            for(let i = 0; i < words.length - 2; i++) {
+                if(words[i].toLowerCase() === words[i+1].toLowerCase() && words[i].toLowerCase() === words[i+2].toLowerCase()) {
+                    hasSpamWords = true;
+                    break;
+                }
+            }
+
+            const status = document.getElementById(statusId);
+            status.innerText = "Words: " + count + "/30";
+            
+            if (count < 30 || hasSpamWords || isSpam(text)) {
+                status.style.color = "#ff4d4d";
+                return false;
+            } else {
+                status.style.color = "#a7ff83";
+                return true;
+            }
+        }
+
+        document.getElementById('q1').oninput = () => checkWords('q1', 'q1Status');
+        document.getElementById('q2').oninput = () => checkWords('q2', 'q2Status');
+
+        document.getElementById('appForm').onsubmit = function(e) {
+            const q1Valid = checkWords('q1', 'q1Status');
+            const q2Valid = checkWords('q2', 'q2Status');
+
+            if (!q1Valid || !q2Valid) {
+                e.preventDefault();
+                alert("Application Denied: Please provide meaningful answers. Repeated words or spam letters are not allowed, and you must meet the 30-word minimum.");
+                return false;
+            }
+
+            // Save to local storage so they can't apply again
+            localStorage.setItem('luminex_applied', 'true');
+        };
+    </script>
+</section>
 
         <section id="socials">
             <h2 class="section-title">CONNECT</h2>
